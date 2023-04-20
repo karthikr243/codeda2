@@ -1,3 +1,15 @@
+//largest number
+int compare(const void* a, const void* b) {
+	const char** ia = (const char*)a;
+	const char** ib = (const char*)b;
+	char* string1[20] = { '\0' };
+	char* string2[20] = { '\0' };
+	strcat(string1, *ia);
+	strcat(string1, *ib);
+	strcat(string2, *ib);
+	strcat(string2, *ia);
+	return -1*strcmp(string1, string2);
+}
 char * largestNumber(int* nums, int numsSize){
 	char* zero = "0";
 	char** temp = malloc(sizeof(char*) * numsSize);
@@ -17,3 +29,4 @@ char * largestNumber(int* nums, int numsSize){
 	printf("%s", ans);
 	return ans;
 }
+
